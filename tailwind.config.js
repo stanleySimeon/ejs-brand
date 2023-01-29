@@ -16,6 +16,7 @@ module.exports = {
           secondary: '#00b3d1',
           gray: '#a9b1b7',
           white: '#ffffff',
+          black: '#000000',
         },
       },
       container: {
@@ -23,9 +24,9 @@ module.exports = {
         width: {
           sm: '640px',
           md: '768px',
-          lg: '1024px',
-          xl: '1280px',
-          '2xl': '1536px',
+          lg: '991px',
+          xl: '1024px',
+          '2xl': '1280px',
         },
       },
     },
