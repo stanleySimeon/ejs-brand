@@ -24,9 +24,9 @@ module.exports = {
         width: {
           sm: '640px',
           md: '768px',
-          lg: '991px',
-          xl: '1024px',
-          '2xl': '1280px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1536px',
         },
       },
     },
