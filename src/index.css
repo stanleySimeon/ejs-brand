@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.active {
-  color: #00b3d1;
-}
-
 @font-face {
   font-family: 'nayanika';
   src: local('NayanikaSlabRegular');

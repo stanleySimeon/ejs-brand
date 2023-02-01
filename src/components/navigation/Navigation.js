@@ -46,31 +46,37 @@ function Navigation() {
     const toggleButton = document.getElementById('toggle-button');
     menu.classList.toggle('hidden');
     toggleButton.classList.toggle('hidden');
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('#menu') && !e.target.closest('#toggle-button')) {
+        menu.classList.add('hidden');
+        toggleButton.classList.remove('hidden');
+      }
+    });
   };
 
   return (
-    <nav id="navigation" className="w-full h-12 md:h-20 flex justify-between items-center fixed py-8 px-3 sm:px-8 md:px-16 lg:px-24 xl:px-36 2xl:px-48 bg-ejs-white">
+    <nav id="navigation" className="w-full h-12 md:h-20 flex justify-between items-center fixed py-8 px-3 sm:px-8 md:px-16 lg:px-24 xl:px-36 2xl:px-48 bg-ejs-white z-50">
       <span className="flex cursor-pointer user-select-none">
-        <Link to="home" spy smooth offset={-70} duration={500} onClick={() => handleClick('home')} className="">
+        <Link to="home" spy smooth offset={-70} onClick={() => handleClick('home')} className="">
           <img src={logo} alt="Logo" className="w-24 sm:w-36 md:w-28 lg:w-36 object-cover" />
         </Link>
       </span>
       <FontAwesomeIcon icon={faBars} className="md:hidden text-3xl text-ejs rounded-none" id="toggle-button" onClick={toggleMenu} />
-      <ul className="w-full hidden md:flex absolute top-0 px-3 sm:px-8 md:px-0 left-0 right-0 h-screen md:h-auto md:relative md:w-auto text-ejs-white md:text-ejs bg-ejs bg-opacity-95 md:bg-transparent" id="menu">
-        <span className="flex flex-col justify-center items-center pb-6 mt-4 md:hidden border-b border-ejs-white">
+      <ul className="navbar w-full sm:w-1/2 hidden md:flex absolute top-0 left-0 md:left-0 right-0 sm:left-1/2 sm:right-0 px-3 sm:px-8 md:px-0 h-screen md:h-auto md:relative md:w-auto text-ejs-white md:text-ejs bg-ejs bg-opacity-95 md:bg-transparent" id="menu">
+        <span className="flex flex-col justify-center items-center pb-6 mt-4 md:hidden sm:border-none border-b border-ejs-white">
           <span className="w-full flex justify-end items-center">
             <FontAwesomeIcon icon={faTimes} className="md:hidden text-3xl text-ejs-white rounded-none" id="toggle-button" onClick={toggleMenu} />
           </span>
-          <img src={smLogo} alt="logo" className="w-32 object-cover" />
+          <img src={smLogo} alt="logo" className="w-32 object-cover sm:hidden" />
         </span>
-        <span className="w-full font-montserrat md:text-xs lg:text-sm xl:text-lg 2xl:text-xl flex flex-col md:flex-row justify-center md:justify-end items-center space-y-8 md:space-y-0 md:space-x-6 lg:space-x-8 xl:space-x-10 2xl:space-x-12 whitespace-nowrap cursor-pointer py-12 md:py-0">
+        <span className="w-full font-montserrat md:text-xs lg:text-sm xl:text-md flex flex-col md:flex-row justify-center md:justify-end items-center sm:items-start sm:pl-8 space-y-8 md:space-y-0 md:space-x-6 lg:space-x-8 xl:space-x-10 2xl:space-x-12 whitespace-nowrap cursor-pointer py-12 md:py-0">
           <li>
             <Link
               to="home"
               spy
               smooth
               offset={-70}
-              duration={100}
               onClick={() => handleClick('home')}
               className={active === 'home' ? 'active' : ''}
             >
@@ -105,19 +111,6 @@ function Navigation() {
           </li>
           <li>
             <Link
-              to="services"
-              spy
-              smooth
-              offset={-70}
-              duration={500}
-              onClick={() => handleClick('services')}
-              className={active === 'services' ? 'active' : ''}
-            >
-              SERVICES
-            </Link>
-          </li>
-          <li>
-            <Link
               to="blogs"
               spy
               smooth
@@ -127,6 +120,19 @@ function Navigation() {
               className={active === 'blogs' ? 'active' : ''}
             >
               BLOGS
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="services"
+              spy
+              smooth
+              offset={-70}
+              duration={500}
+              onClick={() => handleClick('services')}
+              className={active === 'services' ? 'active' : ''}
+            >
+              SERVICES
             </Link>
           </li>
           <li>
