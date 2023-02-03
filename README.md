@@ -28,7 +28,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [EJS BRAND] <a name="about-project"></a>
+# 📖 EJS BRAND <a name="about-project"></a>
 
 **[EJS Brand](https://ejs-brand.netlify.app/)** is a portfolio website for EJS Brand. It is a single page application built with React.js and Tailwind CSS.
 
