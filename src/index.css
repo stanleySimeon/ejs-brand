@@ -1,3 +1,171 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabRegular');
+  src: url('./fonts/nayanika/NayanikaSlabRegular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabBold');
+  src: url('./fonts/nayanika/NayanikaSlabBold.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabItalic');
+  src: url('./fonts/nayanika/NayanikaSlabItalic.otf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabBoldItalic');
+  src: url('./fonts/nayanika/NayanikaSlabBoldItalic.otf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabLight');
+  src: url('./fonts/nayanika/NayanikaSlabLight.otf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabLightItalic');
+  src: url('./fonts/nayanika/NayanikaSlabLightItalic.otf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabThin');
+  src: url('./fonts/nayanika/NayanikaSlabThin.otf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabThinItalic');
+  src: url('./fonts/nayanika/NayanikaSlabThinItalic.otf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabExtraLight');
+  src: url('./fonts/nayanika/NayanikaSlabExtraLight.otf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabExtraLightItalic');
+  src: url('./fonts/nayanika/NayanikaSlabExtraLightItalic.otf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabSemiBold');
+  src: url('./fonts/nayanika/NayanikaSlabSemiBold.otf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabSemiBoldItalic');
+  src: url('./fonts/nayanika/NayanikaSlabSemiBoldItalic.otf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabMedium');
+  src: url('./fonts/nayanika/NayanikaSlabMedium.otf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nayanika';
+  src: local('NayanikaSlabMediumItalic');
+  src: url('./fonts/nayanika/NayanikaSlabMediumItalic.otf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+.font-nayanika {
+  font-family: 'nayanika';
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: local('Montserrat-Black');
+  src: url('./fonts/montserrat/Montserrat-Black.otf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: montserrat;
+  src: local('Montserrat-BlackItalic');
+  src: url('./fonts/montserrat/Montserrat-BlackItalic.otf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: montserrat;
+  src: local('Montserrat-Light');
+  src: url('./fonts/montserrat/Montserrat-Light.otf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: montserrat;
+  src: local('Montserrat-Medium');
+  src: url('./fonts/montserrat/Montserrat-Medium.otf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: montserrat;
+  src: local('Montserrat-Regular');
+  src: url('./fonts/montserrat/Montserrat-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: montserrat;
+  src: local('Montserrat-Thin');
+  src: url('./fonts/montserrat/Montserrat-Thin.otf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+.font-montserrat {
+  font-family: montserrat;
+}
