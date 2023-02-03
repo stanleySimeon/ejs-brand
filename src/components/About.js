@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable max-len */
 import React, { useState } from 'react';
 import Carousel from 'react-multi-carousel';
+import './carousel/aboutCarousel.css';
 import Data, { Team } from '../Data';
 
 function About() {

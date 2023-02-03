@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Carousel from 'react-multi-carousel';
+import './carousel/blogCarousel.css';
 import { BlogsData } from '../Data';
 
 const Blogs = () => (
@@ -59,7 +60,7 @@ const Blogs = () => (
             partialVisibilityGutter: 30,
           },
         }}
-        showDots
+        showDots={false}
         sliderClass=""
         slidesToSlide={1}
         swipeable

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../assets/images/EJS.BRAND-14.png';
@@ -10,7 +10,6 @@ function Navigation() {
 
   const handleClick = (name) => {
     setActive(name);
-    scroll.scrollToTop();
 
     const menu = document.getElementById('menu');
     const toggleButton = document.getElementById('toggle-button');
@@ -28,9 +27,9 @@ function Navigation() {
     } else if (window.scrollY >= 1024 && window.scrollY < 1800) {
       setActive('projects');
     } else if (window.scrollY >= 1800 && window.scrollY < 2400) {
-      setActive('services');
-    } else if (window.scrollY >= 2400 && window.scrollY < 3200) {
       setActive('blogs');
+    } else if (window.scrollY >= 2400 && window.scrollY < 3200) {
+      setActive('services');
     } else {
       setActive('contact');
     }
@@ -58,7 +57,7 @@ function Navigation() {
   return (
     <nav id="navigation" className="w-full h-12 md:h-20 flex justify-between items-center fixed py-8 px-3 sm:px-8 md:px-16 lg:px-24 xl:px-36 2xl:px-48 bg-ejs-white z-50">
       <span className="flex cursor-pointer user-select-none">
-        <Link to="home" spy smooth offset={-70} onClick={() => handleClick('home')} className="">
+        <Link to="home" spy smooth duration={150} offset={-70} onClick={() => handleClick('home')} className="">
           <img src={logo} alt="Logo" className="w-24 sm:w-36 md:w-28 lg:w-36 object-cover" />
         </Link>
       </span>
@@ -77,6 +76,7 @@ function Navigation() {
               spy
               smooth
               offset={-70}
+              duration={100}
               onClick={() => handleClick('home')}
               className={active === 'home' ? 'active' : ''}
             >
@@ -102,7 +102,7 @@ function Navigation() {
               spy
               smooth
               offset={-70}
-              duration={500}
+              duration={150}
               onClick={() => handleClick('projects')}
               className={active === 'projects' ? 'active' : ''}
             >
@@ -115,7 +115,7 @@ function Navigation() {
               spy
               smooth
               offset={-70}
-              duration={500}
+              duration={150}
               onClick={() => handleClick('blogs')}
               className={active === 'blogs' ? 'active' : ''}
             >
@@ -128,7 +128,7 @@ function Navigation() {
               spy
               smooth
               offset={-70}
-              duration={500}
+              duration={150}
               onClick={() => handleClick('services')}
               className={active === 'services' ? 'active' : ''}
             >
@@ -141,7 +141,7 @@ function Navigation() {
               spy
               smooth
               offset={-70}
-              duration={500}
+              duration={150}
               onClick={() => handleClick('contacts')}
               className={active === 'contacts' ? 'active' : ''}
             >

@@ -16,6 +16,7 @@ module.exports = {
           secondary: '#00b3d1',
           hover: '#019FBB',
           gray: '#a9b1b7',
+          grayLight: '#F4F4F4',
           white: '#ffffff',
           black: '#000000',
         },

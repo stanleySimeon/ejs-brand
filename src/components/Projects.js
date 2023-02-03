@@ -1,15 +1,21 @@
-/* eslint-disable max-len */
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
+import './carousel/projectCarousel.css';
 import { ProjectsData } from '../Data';
 
 function Projects() {
-  const navigate = (index) => {
-    const categories = Object.keys(ProjectsData);
-    const category = categories[index];
-    const projects = ProjectsData[category];
-    localStorage.setItem('projects', JSON.stringify(projects));
+  const [index, setIndex] = React.useState(0);
+  const [category, setCategory] = React.useState('Branding');
+
+  const handleCategoryChange = (e) => {
+    setIndex(e.target.value);
+    setCategory(e.target.innerText);
   };
+
+  useEffect(() => {
+    setCategory(Object.keys(ProjectsData)[index]);
+  }, [index]);
 
   return (
     <div id="projects" className="projects container-fluid pt-10 sm:pt-16 md:pt-28 px-3 sm:px-8 md:px-16 lg:px-24 xl:px-36 2xl:px-48">
@@ -24,18 +30,17 @@ function Projects() {
             We have worked with a variety of clients from all over the world.
           </p>
           <div className="w-full md:w-8/12 px-0 flex items-center text-xs md:text-normal xl:text-lg justify-start space-x-2 sm:space-x-4 md:space-x-8">
-            <button type="button" className="btn px-2 sm:px-4 md:px-8 py-2 whitespace-nowrap text-ejs-white bg-ejs-secondary hover:bg-ejs-hover" onClick={() => navigate(0)}>
-              Branding
-            </button>
-            <button type="button" className="btn px-2 sm:px-4 md:px-8 py-2 whitespace-nowrap text-ejs-white bg-ejs-secondary hover:bg-ejs-hover" onClick={() => navigate(1)}>
-              Design
-            </button>
-            <button type="button" className="btn px-2 sm:px-4 md:px-8 py-2 whitespace-nowrap text-ejs-white bg-ejs-secondary hover:bg-ejs-hover" onClick={() => navigate(2)}>
-              Website
-            </button>
-            <button type="button" className="btn px-2 sm:px-4 md:px-8 py-2 whitespace-nowrap text-ejs-white bg-ejs-secondary hover:bg-ejs-hover" onClick={() => navigate(3)}>
-              Marketing
-            </button>
+            {Object.keys(ProjectsData).map((category, i) => (
+              <button
+                key={category}
+                type="button"
+                className="btn px-2 sm:px-4 md:px-8 py-2 whitespace-nowrap text-ejs-white bg-ejs-secondary hover:bg-ejs-hover"
+                onClick={handleCategoryChange}
+                value={i}
+              >
+                {category}
+              </button>
+            ))}
           </div>
         </div>
         <Carousel
@@ -81,25 +86,23 @@ function Projects() {
               partialVisibilityGutter: 30,
             },
           }}
-          showDots
+          showDots={false}
           sliderClass=""
           slidesToSlide={1}
           swipeable
         >
           {
-            Object.keys(ProjectsData).map((category) => (
-              ProjectsData[category].map((project) => (
-                <div key={category.id} className="items flex flex-col space-y-6 sm:px-3 md:px-4">
-                  <img src={project.Image} alt={project.name} className="w-full h-52 sm:h-56 md:h-72 lg:h-92 object-cover" />
-                  <div className="flex flex-col space-y-2">
-                    <div className="font-montserrat flex justify-start items-center space-x-2">
-                      <span className="w-8 h-1 border-b border-ejs" />
-                      <h2 className="text-ejs text-lg font-thin">{project.name}</h2>
-                    </div>
-                    <p className="text-ejs-black text-normal sm:text-md font-montserrat font-light">{project.description}</p>
+            ProjectsData[category].map((project) => (
+              <div key={project.id} className="items flex flex-col space-y-6 sm:px-3 md:px-4">
+                <img src={project.Image} alt={project.name} className="w-full h-52 sm:h-56 md:h-72 lg:h-92 object-cover" />
+                <div className="flex flex-col space-y-2">
+                  <div className="font-montserrat flex justify-start items-center space-x-2">
+                    <span className="w-8 h-1 border-b border-ejs" />
+                    <h2 className="text-ejs text-lg font-thin">{project.name}</h2>
                   </div>
+                  <p className="text-ejs-black text-normal sm:text-md font-montserrat font-light">{project.description}</p>
                 </div>
-              ))
+              </div>
             ))
           }
         </Carousel>

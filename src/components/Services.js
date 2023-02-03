@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
+import './carousel/servicesCarousel.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { ServicesData, TestimonialsData, Clients } from '../Data';
@@ -90,7 +91,7 @@ function Services() {
             {
               TestimonialsData.map((testimonial) => (
                 <div key={testimonial.id} className="flex flex-col space-y-4 sm:px-2 md:px-4">
-                  <img src={testimonial.Image} alt={testimonial.name} className="w-full h-44 sm:h-48 md:h-52 lg:h-64 object-cover" />
+                  <img src={testimonial.Image} alt={testimonial.name} className="w-full h-44 sm:h-48 md:h-52 lg:h-72 object-cover" />
                   <div className="flex flex-col space-y-2">
                     <p className="text-ejs-black text-md font-montserrat font-light">{testimonial.description}</p>
                     <p className="text-ejs text-sm font-montserrat font-thin">
