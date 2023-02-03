@@ -1,7 +1,7 @@
 @font-face {
   font-family: "revicons";
   fallback: fallback;
-  src: url("../src/fonts/revicons.woff") format('woff'), url("../src/fonts/revicons.ttf") format('ttf'), url("../src/fonts/revicons.eot") format('ttf')
+  src: url("../src/fonts/revicons.woff") format('woff'), url("../src/fonts/revicons.ttf") format('ttf'), url("../src/fonts/revicons.eot") format('ttf');
 }
 
 .active {
@@ -9,7 +9,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
 }
 
 input:-webkit-autofill,
